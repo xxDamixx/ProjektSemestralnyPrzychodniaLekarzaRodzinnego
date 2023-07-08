@@ -1,0 +1,95 @@
+﻿<Window x:Class="PrzychodniaLekarzaRodzinnego.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Przychodnia Lekarza Rodzinnego" Height="450" Width="800"
+        Loaded="Window_Loaded">
+    <Grid>
+        <TabControl x:Name="tabControl" SelectionChanged="tabControl_SelectionChanged">
+            <TabItem Header="Grafik">
+                <Grid>
+                    <!-- Kontrolki dla zakładki Grafik -->
+                    DataGrid x:Name="grafikDataGrid" AutoGenerateColumns="False" CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Id Grafik" Binding="{Binding Id_Grafik}" />
+                        <DataGridTextColumn Header="Imię" Binding="{Binding Imię}" />
+                        <DataGridTextColumn Header="Nazwisko" Binding="{Binding Nazwisko}" />
+                        <DataGridTextColumn Header="Poniedziałek" Binding="{Binding Poniedziałek}" />
+                        <DataGridTextColumn Header="Wtorek" Binding="{Binding Wtorek}" />
+                        <DataGridTextColumn Header="Środa" Binding="{Binding Środa}" />
+                        <DataGridTextColumn Header="Czwartek" Binding="{Binding Czwartek}" />
+                        <DataGridTextColumn Header="Piątek" Binding="{Binding Piątek}" />
+                        <DataGridTextColumn Header="Sobota" Binding="{Binding Sobota}" />
+                        <DataGridTextColumn Header="Godz. rozpoczęcia" Binding="{Binding godz_rozpoczęcia}" />
+                        <DataGridTextColumn Header="Godz. zakończenia" Binding="{Binding godz_zakończenia}" />
+                    </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Lekarz">
+                <Grid>
+                    <!-- Kontrolki dla zakładki Lekarz -->
+                    <DataGrid x:Name="lekarzDataGrid" AutoGenerateColumns="False" CanUserAddRows="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Id Lekarz" Binding="{Binding Id_Dane_Lekarz}" />
+                            <DataGridTextColumn Header="Imię" Binding="{Binding Imię}" />
+                            <DataGridTextColumn Header="Nazwisko" Binding="{Binding Nazwisko}" />
+                            <DataGridTextColumn Header="Telefon kontaktowy" Binding="{Binding Telefon_Kontakt}" />
+                            <DataGridTextColumn Header="Dzielnica" Binding="{Binding Dzielnica}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Wizyta">
+                <Grid>
+                    <!-- Kontrolki dla zakładki Wizyta -->
+                    <DataGrid x:Name="wizytaDataGrid" AutoGenerateColumns="False" CanUserAddRows="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Id Wizyta" Binding="{Binding Id_wizyty}" />
+                            <DataGridTextColumn Header="Data wizyty" Binding="{Binding data_wizyty}" />
+                            <DataGridTextColumn Header="Godzina wizyty" Binding="{Binding godzina_wizyty}" />
+                            <DataGridTextColumn Header="Id Pacjenta" Binding="{Binding id_pacjenta}" />
+                            <DataGridTextColumn Header="Id Lekarza" Binding="{Binding id_lekarza}" />
+                            <DataGridTextColumn Header="Diagnoza" Binding="{Binding diagnoza}" />
+                            <DataGridTextColumn Header="Zalecenia" Binding="{Binding zalecenia}" />
+                            <DataGridTextColumn Header="Opis" Binding="{Binding opis}" />
+                            <DataGridTextColumn Header="Skierowanie" Binding="{Binding skierowanie}" />
+                            <DataGridTextColumn Header="Jednostka chorobowa" Binding="{Binding jednostka_chorobowa}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Pacjent">
+                <Grid>
+                    <!-- Kontrolki dla zakładki Pacjent -->
+                    <Grid>
+                        <DataGrid x:Name="pacjentDataGrid" AutoGenerateColumns="False" CanUserAddRows="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Id Pacjent" Binding="{Binding id_pacjenta}" />
+                                <DataGridTextColumn Header="Imię" Binding="{Binding imię}" />
+                                <DataGridTextColumn Header="Nazwisko" Binding="{Binding nazwisko}" />
+                                <DataGridTextColumn Header="PESEL" Binding="{Binding pesel}" />
+                                <DataGridTextColumn Header="Data urodzenia" Binding="{Binding data_ur}" />
+                                <DataGridTextColumn Header="Telefon" Binding="{Binding telefon}" />
+                                <DataGridTextColumn Header="Dzielnica" Binding="{Binding dzielnica}" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Rejestracja">
+                <Grid>
+                    <DataGrid x:Name="rejestracjaDataGrid" AutoGenerateColumns="False" CanUserAddRows="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Id Rejestracja" Binding="{Binding id_rejestracji}" />
+                            <DataGridTextColumn Header="Id Lekarza" Binding="{Binding id_lekarza}" />
+                            <DataGridTextColumn Header="Id Pacjenta" Binding="{Binding id_pacjenta}" />
+                            <DataGridTextColumn Header="Data wizyty" Binding="{Binding data_wizyty}" />
+                            <DataGridTextColumn Header="Godzina wizyty" Binding="{Binding godzina_wizyty}" />
+                            <DataGridTextColumn Header="Telefon pacjenta" Binding="{Binding telefon_pacjenta}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
